@@ -34,8 +34,8 @@ public class Main {
 
         System.out.println("Starting Stock Portfolio Management System on http://0.0.0.0:5000");
         server.start();
-        server.join();
         AutoStockUpdater.start();
+        server.join();
 
     }
 }
