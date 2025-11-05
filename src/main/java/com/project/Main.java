@@ -1,4 +1,6 @@
 package com.project;
+import com.project.utils.AutoStockUpdater;
+
 
 import com.project.controller.*;
 import org.eclipse.jetty.server.Server;
@@ -33,5 +35,7 @@ public class Main {
         System.out.println("Starting Stock Portfolio Management System on http://0.0.0.0:5000");
         server.start();
         server.join();
+        AutoStockUpdater.start();
+
     }
 }
