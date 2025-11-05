@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Market - Stock Portfolio Manager</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <h1 class="nav-logo">StockFolio</h1>
+            <div class="nav-links">
+                <a href="dashboard.html" class="nav-link">Dashboard</a>
+                <a href="market.html" class="nav-link active">Market</a>
+                <a href="transactions.html" class="nav-link">Transactions</a>
+                <button class="btn-logout" onclick="logout()">Logout</button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="section-header">
+            <h2>Stock Market</h2>
+            <button class="btn-secondary" onclick="refreshMarket()">Refresh Prices</button>
+        </div>
+
+        <div class="market-grid" id="market-grid">
+            <div class="loading">Loading market data...</div>
+        </div>
+    </div>
+
+    <div id="tradeModal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeModal()">&times;</span>
+            <h3 id="modal-title">Trade Stock</h3>
+            <div class="modal-body">
+                <p><strong id="modal-stock-name"></strong> (<span id="modal-stock-symbol"></span>)</p>
+                <p class="modal-price">Current Price: <strong id="modal-price">$0.00</strong></p>
+                
+                <div class="form-group">
+                    <label for="quantity">Quantity</label>
+                    <input type="number" id="quantity" min="1" value="1">
+                </div>
+                
+                <p class="modal-total">Total: <strong id="modal-total">$0.00</strong></p>
+                
+                <div class="modal-actions">
+                    <button class="btn-buy" onclick="executeBuy()">Buy</button>
+                    <button class="btn-sell" onclick="executeSell()">Sell</button>
+                </div>
+                
+                <div id="trade-message" class="message"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/js/market.js"></script>
+</body>
+</html>

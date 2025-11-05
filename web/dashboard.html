@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Stock Portfolio Manager</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <h1 class="nav-logo">StockFolio</h1>
+            <div class="nav-links">
+                <a href="dashboard.html" class="nav-link active">Dashboard</a>
+                <a href="market.html" class="nav-link">Market</a>
+                <a href="transactions.html" class="nav-link">Transactions</a>
+                <button class="btn-logout" onclick="logout()">Logout</button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="dashboard-header">
+            <div>
+                <h2 id="welcome-text">Welcome back</h2>
+                <p class="user-type" id="user-type-badge"></p>
+            </div>
+        </div>
+
+        <div class="stats-grid">
+            <div class="stat-card">
+                <p class="stat-label">Cash Balance</p>
+                <h3 class="stat-value" id="cash-balance">$0.00</h3>
+            </div>
+            <div class="stat-card">
+                <p class="stat-label">Portfolio Value</p>
+                <h3 class="stat-value" id="portfolio-value">$0.00</h3>
+            </div>
+            <div class="stat-card">
+                <p class="stat-label">Total Value</p>
+                <h3 class="stat-value" id="total-value">$0.00</h3>
+            </div>
+            <div class="stat-card">
+                <p class="stat-label">Total Return</p>
+                <h3 class="stat-value" id="total-return">$0.00</h3>
+                <p class="stat-percent" id="total-return-percent">0.00%</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h3 class="section-title">Your Holdings</h3>
+            <div class="table-container">
+                <table class="holdings-table">
+                    <thead>
+                        <tr>
+                            <th>Stock</th>
+                            <th>Shares</th>
+                            <th>Avg Cost</th>
+                            <th>Current Price</th>
+                            <th>Market Value</th>
+                            <th>Gain/Loss</th>
+                            <th>Return %</th>
+                        </tr>
+                    </thead>
+                    <tbody id="holdings-body">
+                        <tr>
+                            <td colspan="7" class="empty-state">No holdings yet. Visit the Market to buy stocks!</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/js/dashboard.js"></script>
+</body>
+</html>
