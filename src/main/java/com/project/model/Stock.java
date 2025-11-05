@@ -71,4 +71,17 @@ public class Stock implements PriceChangeable {
         return String.format("%s (%s) - $%.2f (%.2f%%)", 
             companyName, symbol, price, changePercent);
     }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null || getClass() != obj.getClass()) return false;
+        Stock stock = (Stock) obj;
+        return stockId == stock.stockId;
+    }
+    
+    @Override
+    public int hashCode() {
+        return Integer.hashCode(stockId);
+    }
 }
